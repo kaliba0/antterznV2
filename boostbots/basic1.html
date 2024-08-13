@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product_page.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="product_features.js"></script>
+    <title>Basic 1 | Boost Bot</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">&#9001; antterzn•dev &#9002;</a>
+
+        <div class="navlinks">
+            <a href="../index.html">Home</a>
+            <a href="#">Contact me</a>
+            <a href="/help.html">Help</a>
+            <a href="#" class="profile"><ion-icon name="person"></ion-icon></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="navigation">
+            <div class="links">
+                <a href="../index.html">Home</a>
+                <p>></p>
+                <a href="../botlists.html">Bots Discord</a>
+                <p>></p>
+                <a href="../boostbots.html">Boost Server Bot</a>
+                <p>></p>
+                <p style="font-weight: 600;">Basic 1</p>
+            </div>
+            <p>3/3</p>
+        </div>
+
+        <div class="price">
+            20€
+        </div>
+
+        <h1>Personnalize and order your Basic 1 !</h1>
+
+        <div class="preferences">
+            <h2>Bot features</h2>
+
+            <div class="features-list">
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Select service with buttons</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">3 services</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Auto-delete tickets after 5 days of inactivity</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">"/ticket close" to close a ticket channel</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Request tracking</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">"/clear" command to clear all messages in a channel</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Add a service (+4€)</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Opened by {user} on {date and time} information on the recap (+3€)</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Notion website with logs of all the tickets (+10€)</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span class="custom-checkbox"></span>
+                    <span class="text">When a ticket is created in your server, receive a mail/SMS with its informations (+5€)</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Add a command to create embeds (+5€)</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Orders Rating (+7€)</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Add a command to make giveaways (+10€)</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Be able to change the bot language (+7€)</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <h2>Photo Gallery</h2>
+            <p>These are pictures of the Basic 1 with the basic features made for Brawl Stars</p>
+            <div class="photos">
+                <img src="../assets/basic1/1.png" alt="">
+                <img src="../assets/basic1/2.png" alt="">
+                <img src="../assets/basic1/3.png" alt="">
+                <img src="../assets/basic1/4.png" alt="">
+            </div>
+        </div>
+
+        <div class="order-now">
+            <h2>Order Now</h2>
+            <p>The <b>price</b> of your bot is indicated on the <b>bottom-right corner</b></p>
+            <p>Please enter your email address in the field below :</p>
+            <input type="email" name="Email-box" id="customer-email" placeholder="example@gmail.com" required>
+            <p id="email-error" style="color:rgb(140, 0, 0);display:none;">Please enter a valid email address.</p>
+            <p>I will receive your order and contact you very soon in order to have more precision about your Basic 1.</p>
+            <button class="orderbtn">PROCEED ORDER</button>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const basePrice = 20;
+            const priceBubble = document.querySelector('.price');
+            const checkboxes = document.querySelectorAll('.features-list input[type="checkbox"]:not([disabled])');
+            const orderBtn = document.querySelector('.orderbtn');
+            const emailInput = document.getElementById('customer-email');
+            const emailError = document.getElementById('email-error');
+
+            function updatePrice() {
+                let totalPrice = basePrice;
+
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        const priceText = checkbox.parentNode.querySelector('.text').textContent;
+                        const additionalPriceMatch = priceText.match(/\+\d+€/);
+                        if (additionalPriceMatch) {
+                            const additionalPrice = parseInt(additionalPriceMatch[0].replace('+', '').replace('€', ''));
+                            totalPrice += additionalPrice;
+                        }
+                    }
+                });
+
+                priceBubble.textContent = totalPrice + '€';
+            }
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            function handleOrderClick(event) {
+                event.preventDefault();
+                const emailValue = emailInput.value;
+
+                if (!validateEmail(emailValue)) {
+                    emailError.style.display = 'block';
+                } else {
+                    emailError.style.display = 'none';
+
+                    const selectedFeatures = [];
+                    checkboxes.forEach(checkbox => {
+                        if (checkbox.checked) {
+                            const featureText = checkbox.parentNode.querySelector('.text').textContent;
+                            selectedFeatures.push(featureText);
+                        }
+                    });
+
+                    const orderDetails = {
+                        botName: "Basic 1",
+                        price: priceBubble.textContent,
+                        features: selectedFeatures,
+                        email: emailValue,
+                        orderDate: new Date().toLocaleString()
+                    };
+
+                    // Envoi des données au serveur pour stockage dans un fichier JSON
+                    fetch('order_handler.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(orderDetails),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Your order has been placed successfully!');
+                        } else {
+                            alert('There was an error processing your order.');
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert('There was an error processing your order.');
+                    });
+                }
+            }
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updatePrice);
+            });
+
+            orderBtn.addEventListener('click', handleOrderClick);
+
+            updatePrice(); // Calcul initial du prix
+        });
+    </script>
+</body>
+</html>
