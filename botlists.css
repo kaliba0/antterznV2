@@ -74,7 +74,7 @@ header .navlinks a:hover ion-icon {
 
 
 main .section1 {
-    padding: 70px 100px;
+    padding: 30px 100px;
     background-color: white;
 }
 
@@ -93,6 +93,7 @@ main .section1 .botcatboxes {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 40px;
 }
 
 main .section1 .botcatboxes .box {
@@ -105,7 +106,7 @@ main .section1 .botcatboxes .box {
     max-width: 450px;
     padding: 15px 30px;
     transition: transform 0.3s ease;
-    background-color: #f3f3f3;
+    background-color: #ededed;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
     border-radius: 5px;
 }
@@ -183,3 +184,22 @@ main .section1 .botcatboxes .box2 h3 {
 
 
 
+main .navigation {
+    padding: 0 100px;
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+main .links a {
+    text-decoration: underline;
+}

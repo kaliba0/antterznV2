@@ -7,7 +7,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="product_features.js"></script>
-    <title>Basic 1 | Boost Bot</title>
+    <title>Basic 2 | Boost Bot</title>
 </head>
 <body>
     <header>
@@ -30,16 +30,15 @@
                 <p>></p>
                 <a href="../boostbots.html">Boost Server Bot</a>
                 <p>></p>
-                <p style="font-weight: 600;">Basic 1</p>
+                <p style="font-weight: 600;">Advanced</p>
             </div>
             <p>3/3</p>
         </div>
 
         <div class="price">
-            20€
         </div>
 
-        <h1>Personnalize and order your Basic 1 !</h1>
+        <h1>Personnalize and order your Advanced !</h1>
 
         <div class="preferences">
             <h2>Bot features</h2>
@@ -48,12 +47,22 @@
                 <label>
                     <input type="checkbox" checked disabled>
                     <span class="custom-checkbox"></span>
-                    <span class="text">Select service with buttons</span>
+                    <span class="text">Select service with a dropdown menu</span>
                 </label>
                 <label>
                     <input type="checkbox" checked disabled>
                     <span class="custom-checkbox"></span>
-                    <span class="text">3 services</span>
+                    <span class="text">7 services</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Get more informations about the client request with modals</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Auto-delete tickets after 5 days of inactivity</span>
                 </label>
                 <label>
                     <input type="checkbox" checked disabled>
@@ -70,21 +79,21 @@
                     <span class="custom-checkbox"></span>
                     <span class="text">"/clear" command to clear all messages in a channel</span>
                 </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Opened by {user} on {date and time} information on the recap (+3€)</span>
+                </label>
 
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" checked disabled>
                     <span class="custom-checkbox"></span>
-                    <span class="text">Auto-delete tickets after 5 days of inactivity (+4€)</span>
+                    <span class="text">Add an embed that follows the ticket summary to explain how to pay</span>
                 </label>
                 <label>
                     <input type="checkbox">
                     <span class="custom-checkbox"></span>
                     <span class="text">Add a service (+4€)</span>
-                </label>
-                <label>
-                    <input type="checkbox">
-                    <span class="custom-checkbox"></span>
-                    <span class="text">Opened by {user} on {date and time} information on the recap (+3€)</span>
                 </label>
                 <label>
                     <input type="checkbox">
@@ -121,22 +130,19 @@
                     <span class="custom-checkbox"></span>
                     <span class="text">Be able to change the bot language (+7€)</span>
                 </label>
-                <label>
-                    <input type="checkbox">
-                    <span class="custom-checkbox"></span>
-                    <span class="text">An embed that follows the ticket summary to explain how to pay (+3€)</span>
-                </label>
             </div>
         </div>
 
         <div class="gallery">
             <h2>Photo Gallery</h2>
-            <p>These are pictures of the Basic 1 with the basic features made for Brawl Stars</p>
+            <p>These are pictures of the Basic 2 with the basic features made for Brawl Stars (Only 3 services are displayed on the pictures but you can add up to 5 services)</p>
             <div class="photos">
-                <img src="../assets/basic1/1.png" alt="">
-                <img src="../assets/basic1/2.png" alt="">
-                <img src="../assets/basic1/3.png" alt="">
-                <img src="../assets/basic1/4.png" alt="">
+                <img src="../assets/basic2/1.png" alt="">
+                <img src="../assets/basic2/2.png" alt="">
+                <img src="../assets/basic2/3.png" alt="">
+                <img src="../assets/basic2/4.png" alt="">
+                <img src="../assets/basic2/5.png" alt="">
+                <img src="../assets/basic2/6.png" alt="">
             </div>
         </div>
 
@@ -146,15 +152,15 @@
             <p>Please enter your email address in the field below :</p>
             <input type="email" name="Email-box" id="customer-email" placeholder="example@gmail.com" required>
             <p id="email-error" style="color:red;display:none;">Please enter a valid email address.</p>
-            <p>I will receive your order and contact you very soon in order to have more precision about your Basic 1.</p>
+            <p>I will receive your order and contact you very soon in order to have more precision about your Basic 2.</p>
             <button class="orderbtn">PROCEED ORDER</button>
-            <p id="success-order" style="color: rgb(83, 255, 83);; font-weight: 700; display: none;">YOUR ORDER HAS BEEN SUCCESSFULLY SENT</p>
+            <p id="success-order" style="color: rgb(83, 255, 83); font-weight: 700; display: none;">YOUR ORDER HAS BEEN SUCCESSFULLY SENT</p>
         </div>
     </main>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const basePrice = 20;
+            const basePrice = 45;
             const priceBubble = document.querySelector('.price');
             const checkboxes = document.querySelectorAll('.features-list input[type="checkbox"]:not([disabled])');
             const orderBtn = document.querySelector('.orderbtn');
@@ -202,7 +208,7 @@
                     });
 
                     const orderDetails = {
-                        botName: "Basic 1",
+                        botName: "Basic 2",
                         price: priceBubble.textContent,
                         features: selectedFeatures,
                         email: emailValue,
