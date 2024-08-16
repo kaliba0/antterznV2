@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    color: black;
+    text-decoration: none;
+    font-family: 'Poppins', 'Roboto Mono', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    padding: 20px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    background-color: black;
+}
+
+header .logo {
+    font-weight: 600;
+    font-size: x-large;
+    color: white;
+}
+
+
+header .navlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+header .navlinks a {
+    color: antiquewhite;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+header .navlinks .profile {
+    border: solid 2px white;
+    color: #333333;
+}
+
+header .navlinks a ion-icon {
+    color: white;
+    font-size: 20px;
+}
+
+header .navlinks a:hover {
+    background-color: antiquewhite;
+    color: black;
+    transition: all .2s;
+} 
+
+header .navlinks .profile:hover {
+    background-color: white;
+    color: black;
+    transition: all .2s;
+} 
+
+header .navlinks a:hover ion-icon {
+    color: black;
+}
+
+
+main .section1 {
+    padding: 30px 100px;
+    background-color: white;
+}
+
+
+main .section1 h2 {
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+main .section1 .subtitle {
+    text-align: center;
+}
+
+main .navigation {
+    padding: 0 100px;
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+main .links a {
+    text-decoration: underline;
+}
+
+main .section1 .questionnaire {
+    margin-top: 100px;
+    width: 100%;
+}
+
+main .section1 .questionnaire .question {
+    margin: 30px 0;
+}
+
+main .section1 .questionnaire .question .label {
+    text-align: center;
+}
+
+main .section1 .questionnaire .question textarea {
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    border: solid 1px #333333;
+    border-radius: 5px;
+}
+
+
+.order-now {
+    background-color: #006C8D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 100px 50px 100px;
+    
+}
+
+.order-now h2, .order-now p, .order-now b {
+    color: white;
+}
+
+#customer-email {
+    width: 50%;
+    padding: 10px;
+    color: black;
+    font-size: 15px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+.order-now .orderbtn {
+    padding: 10px 50px;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: rgb(240, 240, 198);
+    border-radius: 5px;
+    margin: 30px 0;
+    border: solid 2px black;
+}
+
+.order-now .orderbtn:hover {
+    background-color: black;
+    color: white;
+    transition: all .2s;
+}
