@@ -141,8 +141,9 @@
 
         <div class="order-now">
             <h2>Order Now</h2>
-            <p>The <b>price</b> of your bot is indicated on the <b>bottom-right corner</b></p>
-            <p>Please enter your email address in the field below :</p>
+            <p>1. Please send the needed amount <b>(<span id="price-order" style="color: white;"></span>€)</b> to me by clicking the link below :</p>
+            <a href="https://www.paypal.com/paypalme/antterzndev"  class="paypal" target="_blank"><ion-icon name="logo-paypal"></ion-icon> antterzndev on PayPal <ion-icon name="logo-paypal"></ion-icon></a>
+            <p>2. Please enter your email address in the field below :</p>
             <input type="email" name="Email-box" id="customer-email" placeholder="example@gmail.com" required>
             <p id="email-error" style="color:red;display:none;">Please enter a valid email address.</p>
             <p>I will receive your order and contact you very soon in order to have more precision about your Basic 1.</p>
@@ -160,6 +161,7 @@
             const emailInput = document.getElementById('customer-email');
             const emailError = document.getElementById('email-error');
             const successText = document.getElementById('success-order');
+            const priceOrder = document.getElementById('price-order');
 
             function updatePrice() {
                 let totalPrice = basePrice;
@@ -176,6 +178,7 @@
                 });
 
                 priceBubble.textContent = totalPrice + '€';
+                priceOrder.textContent = totalPrice
             }
 
             function validateEmail(email) {

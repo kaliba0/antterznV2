@@ -73,6 +73,24 @@ header .navlinks a:hover ion-icon {
     color: white;
 }
 
+header .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header .navbar .menubtn {
+    color: black;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+
+header .dropdownmenu {
+    display: none;
+}
+
 
 main .section0 {
     padding: 100px;
@@ -122,7 +140,7 @@ main .section1 p, .section1 ul li {
     font-size: 18px;
 }
 
-.section2 {
+main .section2 {
     padding: 100px;
     background-color: #006C8D;
 }
@@ -155,4 +173,69 @@ footer {
 
 footer p {
     color: white;
+}
+
+@media (max-width: 1000px) {
+    header {
+        padding: 20px 50px;
+    }
+
+    main .section0{
+        padding: 50px;
+    }
+
+    main .section1 {
+        padding: 50px;
+    }
+
+    main .section2 {
+        padding: 50px;
+    }
+    
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 20px 25px;
+    }
+    header .navbar .navlinks {
+        display: none;
+    }
+
+    header .navbar .menubtn {
+        display: flex;
+    }
+
+    main .section0{
+        padding: 25px;
+    }
+
+    main .section0 p {
+        text-align: justify;
+    }
+
+    main .section1 {
+        padding: 25px;
+    }
+
+    main .section2 {
+        padding: 25px;
+    }
+
+    main .section0 h2, main .section1 h2, .section2 h2 {
+        font-size: 20px;
+    }
+
+    main .section0 p, main .section1 p, .section2 p,  .section1 ul li,  .section2 ul li {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    footer {
+        font-size: 12px;
+    } 
 }

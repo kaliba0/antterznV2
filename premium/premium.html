@@ -7,7 +7,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="product_features.js"></script>
-    <title>Advanced | Boost Bot</title>
+    <title>Premium | Boost Bot</title>
 </head>
 <body>
     <header>
@@ -29,7 +29,7 @@
                 <p>></p>
                 <a href="../boostbots.html">Boost Server Bot</a>
                 <p>></p>
-                <p style="font-weight: 600;">Advanced</p>
+                <p style="font-weight: 600;">Premium</p>
             </div>
             <p>3/3</p>
         </div>
@@ -37,7 +37,7 @@
         <div class="price">
         </div>
 
-        <h1>Personnalize and order your <span style="color: #006C8D; background-color: antiquewhite;">Advanced</span> !</h1>
+        <h1 style="display: flex; flex-direction: row; align-items: center; gap: 10px;">Personnalize and order your <span style="color: #006C8D; background-color: antiquewhite;">Premium</span> ! <ion-icon name="diamond-outline" style="color: #006C8D; font-size: 40px;"></ion-icon></h1>
 
         <div class="preferences">
             <h2>Bot features</h2>
@@ -51,7 +51,7 @@
                 <label>
                     <input type="checkbox" checked disabled>
                     <span class="custom-checkbox"></span>
-                    <span class="text">7 services</span>
+                    <span class="text">No ticket type limit !</span>
                 </label>
                 <label>
                     <input type="checkbox" checked disabled>
@@ -86,6 +86,11 @@
                 <label>
                     <input type="checkbox" checked disabled>
                     <span class="custom-checkbox"></span>
+                    <span class="text">Add players feature</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
                     <span class="text">Add an embed that follows the ticket summary to explain how to pay</span>
                 </label>
                 <label>
@@ -94,14 +99,29 @@
                     <span class="text">Buy and sell accounts feature</span>
                 </label>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" checked disabled>
                     <span class="custom-checkbox"></span>
-                    <span class="text">Add a service (+4€)</span>
+                    <span class="text">Notion website with logs of all the tickets</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">One free "/" command</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Orders Rating</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Add a command to create embeds</span>
                 </label>
                 <label>
                     <input type="checkbox">
                     <span class="custom-checkbox"></span>
-                    <span class="text">Notion website with logs of all the tickets (+7€)</span>
+                    <span class="text">Add a service (+4€)</span>
                 </label>
                 <label>
                     <input type="checkbox">
@@ -112,16 +132,6 @@
                     <input type="checkbox">
                     <span class="custom-checkbox"></span>
                     <span class="text">Add a command in the bot (+7€)</span>
-                </label>
-                <label>
-                    <input type="checkbox">
-                    <span class="custom-checkbox"></span>
-                    <span class="text">Add a command to create embeds (+5€)</span>
-                </label>
-                <label>
-                    <input type="checkbox">
-                    <span class="custom-checkbox"></span>
-                    <span class="text">Orders Rating (+7€)</span>
                 </label>
                 <label>
                     <input type="checkbox">
@@ -138,23 +148,7 @@
 
         <div class="gallery">
             <h2>Photo Gallery</h2>
-            <p>Here are some pictures of the Advanced !</p>
-            <div class="photos">
-                <img src="../assets/advanced/1.png" alt="">
-                <img src="../assets/advanced/2.png" alt="">
-                <img src="../assets/advanced/3.png" alt="">
-                <img src="../assets/advanced/4.png" alt="">
-                <img src="../assets/advanced/5.png" alt="">
-                <img src="../assets/advanced/6.png" alt="">
-                <img src="../assets/advanced/7.png" alt="">
-                <img src="../assets/advanced/8.png" alt="">
-                <img src="../assets/advanced/9.png" alt="">
-                <img src="../assets/advanced/10.png" alt="">
-                <img src="../assets/advanced/11.png" alt="">
-                <img src="../assets/advanced/12.png" alt="">
-                <img src="../assets/advanced/13.png" alt="">
-                <img src="../assets/advanced/14.png" alt="">
-            </div>
+            <p>I do not have any pictures of this bot. Indeed, as this bot will be completly created for your needs and your wishes, I haven't built it yet (you didn't order this bot yet 😉)</p>
         </div>
 
         <div class="order-now">
@@ -172,7 +166,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const basePrice = 45;
+            const basePrice = 65;
             const priceBubble = document.querySelector('.price');
             const checkboxes = document.querySelectorAll('.features-list input[type="checkbox"]:not([disabled])');
             const orderBtn = document.querySelector('.orderbtn');

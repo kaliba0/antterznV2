@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>antterzn.dev</title>
-    <script>
-        function orderProduct(productId) {
-            window.location.href = 'product.html?id=' + productId;
-        }
-    </script>
 </head>
 <body>
     <header>
         <a href="#" class="logo">&#9001; antterzn•dev &#9002;</a>
 
-        <div class="navlinks">
+        <div class="navbar">
+            <div class="navlinks">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
+            </div>
+            <div class="menubtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdownmenu">
             <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
+            <a href="products.html" style="text-decoration: underline;">Products</a>
             <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
         </div>
     </header>
@@ -57,9 +64,9 @@
             <h2>How to reach me ?</h2>
             <p>If you want to contact me, here are many ways to send me a message :</p>
             <ul>
-                <li>by email : antterzn-dev@gmail.com</li>
-                <li>on discord : @antterzn</li>
-                <li>on paypal: antterzn-dev@gmail.com ;)</li>
+                <li>by email : antterzn.dev@gmail.com</li>
+                <li>on Discord : @antterzn</li>
+                <li>on PayPal: antterzn.dev@gmail.com ;)</li>
             </ul>
         </div>
     </main>
