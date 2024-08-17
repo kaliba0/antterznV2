@@ -8,16 +8,32 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>antterzn.dev</title>
     <script>
-        function orderProduct(productId) {
-            window.location.href = 'product.html?id=' + productId;
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menubtn');
+            const dropdownMenu = document.getElementById('dropdownmenu');
+    
+            menuBtn.addEventListener('click', function() {
+                dropdownMenu.classList.toggle('show');
+            });
+        });
     </script>
 </head>
 <body>
     <header>
         <a href="index.html" class="logo">&#9001; antterzn•dev &#9002;</a>
+ 
+        <div class="navbar">
+            <div class="navlinks">
+                <a href="index.html">Home</a>
+                <a href="products.html" style="text-decoration: underline;">Products</a>
+                <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
+            </div>
+            <div class="menubtn" id="menubtn">
+                <ion-icon name="menu-sharp"></ion-icon>
+            </div>
+        </div>
 
-        <div class="navlinks">
+        <div class="dropdownmenu" id="dropdownmenu">
             <a href="index.html">Home</a>
             <a href="products.html" style="text-decoration: underline;">Products</a>
             <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
@@ -33,79 +49,77 @@
             </div>
 
             <div class="product-container">
-                <div class="discord-box">
-                    <img src="assets/logos/discord-logo.png" alt="discord logo" class="discord-logo">
+                <div class="product-box discord-box">
+                    <img src="assets/logos/discord-logo.png" alt="discord logo" class="product-logo">
                     <div class="product-details">
                         <h3>Custom Discord Bot</h3>
                         <p>I can create a discord bot and integrate everything you want your bot to do.</p>
                     </div>
-                    <a href="botlists.html" class="order" >CHOOSE A BOT</a>
+                    <a href="botlists.html" class="order">CHOOSE A BOT</a>
                 </div>
-    
-                <div class="html-box">
-                    <img src="assets/logos/html-logo.png" alt="html logo" class="html-logo">
+            
+                <div class="product-box html-box">
+                    <img src="assets/logos/html-logo.png" alt="html logo" class="product-logo">
                     <div class="product-details">
                         <h3>Website</h3>
                         <p>You want a website to present your skills and experiences ? This product is made for you !</p>
                     </div>
                     <a href="" class="order">ORDER THIS PRODUCT</a>
                 </div>
-
-                <div class="android-box">
+            
+                <div class="product-box android-box">
                     <div class="overlay"><p>SORRY,<br>THIS PRODUCT IS NOT AVAILABLE YET</p></div>
-                    <img src="assets/logos/android-logo.png" alt="android logo" class="android-logo">
+                    <img src="assets/logos/android-logo.png" alt="android logo" class="product-logo">
                     <div class="product-details">
                         <h3>Mobile Android App</h3>
                         <p>You have an idea of a mobile app and don't know how to do it ? <br>I can build this app for you!</p>
                     </div>
                     <a href="javascript:void(0)" class="order" onclick="orderProduct('android')">ORDER THIS PRODUCT</a>
                 </div>
-
-                <div class="react-box">
+            
+                <div class="product-box react-box">
                     <div class="overlay"><p>SORRY,<br>THIS PRODUCT IS NOT AVAILABLE YET</p></div>
-                    <img src="assets/logos/react-logo.png" alt="react logo" class="react-logo">
+                    <img src="assets/logos/react-logo.png" alt="react logo" class="product-logo">
                     <div class="product-details">
                         <h3>React.js App</h3>
                         <p>You have an idea of a mobile app and don't know how to do it ? <br>I can build this app for you!</p>
                     </div>
                     <a href="javascript:void(0)" class="order" onclick="orderProduct('react')">ORDER THIS PRODUCT</a>
                 </div>
-            </div>
-
-            <div class="product-container">
-                <div class="python-box">
+            
+                <div class="product-box python-box">
                     <div class="overlay"><p>SORRY,<br>THIS PRODUCT IS NOT AVAILABLE YET</p></div>
-                    <img src="assets/logos/python-logo.png" alt="python logo" class="python-logo">
+                    <img src="assets/logos/python-logo.png" alt="python logo" class="product-logo">
                     <div class="product-details">
                         <h3>Python App or Project</h3>
                         <p>You have an idea of a mobile app and don't know how to do it ? <br>I can build this app for you!</p>
                     </div>
                     <a href="javascript:void(0)" class="order" onclick="orderProduct('python')">ORDER THIS PRODUCT</a>
                 </div>
-
-                <div class="arduino-box">
+            
+                <div class="product-box arduino-box">
                     <div class="overlay"><p>SORRY,<br>THIS PRODUCT IS NOT AVAILABLE YET</p></div>
-                    <img src="assets/logos/arduino-logo.svg" alt="arduino logo" class="arduino-logo">
+                    <img src="assets/logos/arduino-logo.svg" alt="arduino logo" class="product-logo">
                     <div class="product-details">
                         <h3>Arduino Project</h3>
                         <p>You need Arduino to program a robot or anything else ? I can make it for you !</p>
                     </div>
                     <a href="javascript:void(0)" class="order" onclick="orderProduct('arduino')">ORDER THIS PRODUCT</a>
                 </div>
-
-                <div class="swift-box">
+            
+                <div class="product-box swift-box">
                     <div class="overlay"><p>SORRY,<br>THIS PRODUCT IS NOT AVAILABLE YET</p></div>
-                    <img src="assets/logos/swift-logo.svg" alt="swift logo" class="swift-logo">
+                    <img src="assets/logos/swift-logo.svg" alt="swift logo" class="product-logo">
                     <div class="product-details">
                         <h3>Mobile IOS App</h3>
                         <p>You have an idea of a mobile app and don't know how to do it ? <br>I can build this app for you!</p>
                     </div>
                     <a href="javascript:void(0)" class="order" onclick="orderProduct('swift')">ORDER THIS PRODUCT</a>
                 </div>
-
-                <div class="portfolio-box">
+            
+                <div class="product-box portfolio-box">
                     <div class="overlay"><p>SORRY,<br>THIS PRODUCT IS NOT AVAILABLE YET</p></div>
-                    <img src="assets/logos/portfolio-logo.png" alt="portfolio logo" class="portfolio-logo">
+                    <img src="assets/logos/portfolio-logo.png" alt="portfolio logo" class="product-logo">
                     <div class="product-details">
                         <h3>Other</h3>
                         <p>You want me to create something that isn't in my products ? You can, of course !</p>
@@ -113,7 +127,8 @@
                     <a href="javascript:void(0)" class="order" onclick="orderProduct('portfolio')">ORDER THIS PRODUCT</a>
                 </div>
             </div>
-            <p style="text-align: center;">All the products I sell are of course customizables. <br>Also, when you order something, you will be asked your email adress so we can discuss of your product and make it exactly as you want !</p>
+            
+            <p style="text-align: center;">All the products I sell are of course customizables. <br>Also, when you order something, you will be asked your email address so we can discuss your product and make it exactly as you want !</p>
         </div>
     </main>
     <footer>

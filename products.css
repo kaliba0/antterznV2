@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Importation des polices */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
+/* Styles globaux */
 * {
     color: black;
     text-decoration: none;
@@ -11,6 +12,7 @@
 body {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 header {
@@ -21,6 +23,7 @@ header {
     text-align: center;
     align-items: center;
     background-color: black;
+    flex-wrap: wrap;
 }
 
 header .logo {
@@ -28,7 +31,6 @@ header .logo {
     font-size: x-large;
     color: white;
 }
-
 
 header .navlinks {
     display: flex;
@@ -62,25 +64,277 @@ header .navlinks a:hover {
     background-color: antiquewhite;
     color: black;
     transition: all .2s;
-} 
+}
 
 header .navlinks .profile:hover {
     background-color: white;
     color: black;
     transition: all .2s;
-} 
+}
 
 header .navlinks a:hover ion-icon {
     color: black;
 }
 
-
-main .product-container {
+header .navbar {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    align-items: center;
+}
+
+header .navbar .menubtn {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+
+header .navbar .menubtn ion-icon {
+    color: white;
+}
+
+header .dropdownmenu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
+    text-align: center;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    margin: 0 25px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 100;
+}
+
+header .dropdownmenu.show {
+    display: flex;
+}
+
+header .dropdownmenu a {
+    padding: 10px 20px;
+    color: #333333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 5px;
+}
+
+header .dropdownmenu a:hover {
+    background-color: #006C8D;
+    color: white;
+    transition: all .2s;
+}
+
+header .dropdownmenu .profile {
+    border: solid 2px #333333;
+    color: #333333;
+    width: fit-content;
+}
+
+header .dropdownmenu a ion-icon {
+    color: #333333;
+    font-size: 20px;
+}
+
+header .dropdownmenu a:hover {
+    background-color: #006C8D;
+    color: white;
+    transition: all .2s;
+}
+
+header .dropdownmenu .profile:hover {
+    background-color: #333333;
+    color: white;
+    transition: all .2s;
+}
+
+header .dropdownmenu a:hover ion-icon {
+    color: white;
+}
+
+/* Styles communs aux boxes */
+.product-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    position: relative;
+    margin: 0 auto;
+}
+
+.product-box img {
+    height: 150px;
+    padding: 20px 0;
+}
+
+.product-box .product-details {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.product-box .product-details p {
+    font-size: 14px;
+    padding: 10px;
+}
+
+.product-box .order {
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    transition: all 0.15s;
+    border-top: solid 2px;
+}
+
+.product-box:hover {
+    transform: scale(1.03);
+}
+
+.product-box .overlay {
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.467);
+}
+
+.product-box .overlay p {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Couleurs spécifiques */
+.discord-box {
+    border: solid 2px #5165F6;
+}
+
+.discord-box .order {
+    background-color: #5165F6;
+    border-color: #5165F6;
+}
+
+.discord-box .order:hover {
+    background-color: white;
+    color: #5165F6;
+}
+
+.swift-box {
+    border: solid 2px #F89440;
+}
+
+.swift-box .order {
+    background-color: #F89440;
+    border-color: #F89440;
+}
+
+.swift-box .order:hover {
+    background-color: white;
+    color: #F89440;
+}
+
+.android-box {
+    border: solid 2px #A6C73B;
+}
+
+.android-box .order {
+    background-color: #A6C73B;
+    border-color: #A6C73B;
+}
+
+.android-box .order:hover {
+    background-color: white;
+    color: #A6C73B;
+}
+
+.react-box {
+    border: solid 2px #61DAFB;
+}
+
+.react-box .order {
+    background-color: #61DAFB;
+    border-color: #61DAFB;
+}
+
+.react-box .order:hover {
+    background-color: white;
+    color: #61DAFB;
+}
+
+.python-box {
+    border: solid 2px #FFD242;
+}
+
+.python-box .order {
+    background-color: #FFD242;
+    border-color: #FFD242;
+}
+
+.python-box .order:hover {
+    background-color: white;
+    color: #FFD242;
+}
+
+.arduino-box {
+    border: solid 2px #129BA1;
+}
+
+.arduino-box .order {
+    background-color: #129BA1;
+    border-color: #129BA1;
+}
+
+.arduino-box .order:hover {
+    background-color: white;
+    color: #129BA1;
+}
+
+.portfolio-box {
+    border: solid 2px #E44D26;
+}
+
+.portfolio-box .order {
+    background-color: #E44D26;
+    border-color: #E44D26;
+}
+
+.portfolio-box .order:hover {
+    background-color: white;
+    color: #E44D26;
+}
+
+.html-box {
+    border: solid 2px #D5B12B;
+}
+
+.html-box .order {
+    background-color: #D5B12B;
+    border-color: #D5B12B;
+}
+
+.html-box .order:hover {
+    background-color: white;
+    color: #D5B12B;
 }
 
 main .section2 {
@@ -92,367 +346,12 @@ main .section2 .sec2title {
     margin-bottom: 50px;
 }
 
-
-/* DISCORD */
-
-main .section2 .discord-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: solid 2px #5165F6;
-    max-width: 300px;
-    transition: transform 0.3s ease;
-    border-radius: 5px;
-}
-
-.discord-box:hover {
-    transform: scale(1.03);
-}
-
-main .section2 .discord-box img {
-    height: 150px;
-    padding: 20px 0;
-}
-main .section2 .discord-box .product-details {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-main .section2 .discord-box .product-details p{
-    font-size: 14px;
-    padding: 10px;
-}
-main .section2 .discord-box .order {
-    text-align: center;
-    background-color: #5165F6;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    border-top: solid 2px #5165F6;
-}
-main .section2 .discord-box .order:hover{
-    background-color: white;
-    color: #5165F6;
-    transition: all .15s;
-}
-
-
-/* SWIFT*/
-main .section2 .swift-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: solid 2px #F89440;
-    max-width: 300px;
-    border-radius: 5px;
-}
-main .section2 .swift-box img {
-    height: 150px;
-    padding: 20px 0;
-}
-main .section2 .swift-box .product-details {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-main .section2 .swift-box .product-details p{
-    font-size: 14px;
-    padding: 10px;
-}
-main .section2 .swift-box .order {
-    text-align: center;
-    background-color: #F89440;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    border-top: solid 2px #F89440;
-}
-main .section2 .swift-box .order:hover{
-    background-color: white;
-    color: #F89440;
-    transition: all .15s;
-}
-
-
-/* ANDROID */
-
-main .section2 .android-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: solid 2px #A6C73B;
-    max-width: 300px;
-    border-radius: 5px;
-}
-main .section2 .android-box img {
-    height: 150px;
-    padding: 20px 0;
-}
-main .section2 .android-box .product-details {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-main .section2 .android-box .product-details p{
-    font-size: 14px;
-    padding: 10px;
-}
-main .section2 .android-box .order {
-    text-align: center;
-    background-color: #A6C73B;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    border-top: solid 2px #A6C73B;
-}
-main .section2 .android-box .order:hover{
-    background-color: white;
-    color: #A6C73B;
-    transition: all .15s;
-}
-
-/* REACT */
-main .section2 .react-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: solid 2px #61DAFB;
-    max-width: 300px;
-    border-radius: 5px;
-}
-main .section2 .react-box img {
-    height: 150px;
-    padding: 20px 0;
-}
-main .section2 .react-box .product-details {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-main .section2 .react-box .product-details p{
-    font-size: 14px;
-    padding: 10px;
-}
-main .section2 .react-box .order {
-    text-align: center;
-    background-color: #61DAFB;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    border-top: solid 2px #61DAFB;
-}
-main .section2 .react-box .order:hover{
-    background-color: white;
-    color: #61DAFB;
-    transition: all .15s;
-}
-
-
-/* PYTHON */
-main .section2 .python-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: solid 2px #FFD242;
-    max-width: 300px;
-    border-radius: 5px;
-}
-main .section2 .python-box img {
-    height: 150px;
-    padding: 20px 0;
-}
-main .section2 .python-box .product-details {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-main .section2 .python-box .product-details p{
-    font-size: 14px;
-    padding: 10px;
-}
-main .section2 .python-box .order {
-    text-align: center;
-    background-color: #FFD242;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    border-top: solid 2px #FFD242;
-}
-main .section2 .python-box .order:hover{
-    background-color: white;
-    color: #FFD242;
-    transition: all .15s;
-}
-
-
-/* ARDUINO */
-main .section2 .arduino-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: solid 2px #129BA1;
-    max-width: 300px;
-    border-radius: 5px;
-}
-main .section2 .arduino-box img {
-    height: 150px;
-    padding: 20px 0;
-}
-main .section2 .arduino-box .product-details {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-main .section2 .arduino-box .product-details p{
-    font-size: 14px;
-    padding: 10px;
-}
-main .section2 .arduino-box .order {
-    text-align: center;
-    background-color: #129BA1;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    border-top: solid 2px #129BA1;
-}
-main .section2 .arduino-box .order:hover{
-    background-color: white;
-    color: #129BA1;
-    transition: all .15s;
-}
-
-
-/* PORTOFOLIO */
-main .section2 .portfolio-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: solid 2px #E44D26;
-    max-width: 300px;
-    border-radius: 5px;
-}
-main .section2 .portfolio-box img {
-    height: 150px;
-    padding: 20px 0;
-}
-main .section2 .portfolio-box .product-details {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-main .section2 .portfolio-box .product-details p{
-    font-size: 14px;
-    padding: 10px;
-}
-main .section2 .portfolio-box .order {
-    text-align: center;
-    background-color: #E44D26;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    border-top: solid 2px #E44D26;
-}
-main .section2 .portfolio-box .order:hover{
-    background-color: white;
-    color: #E44D26;
-    transition: all .15s;
-}
-
-/* HTML */
-main .section2 .html-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: solid 2px #D5B12B;
-    max-width: 300px;
-    transition: transform 0.3s ease;
-    border-radius: 5px;
-}
-.html-box:hover {
-    transform: scale(1.03);
-}
-main .section2 .html-box img {
-    height: 150px;
-    padding: 20px 0;
-}
-main .section2 .html-box .product-details {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-main .section2 .html-box .product-details p{
-    font-size: 14px;
-    padding: 10px;
-}
-main .section2 .html-box .order {
-    text-align: center;
-    background-color: #D5B12B;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    border-top: solid 2px #D5B12B;
-}
-main .section2 .html-box .order:hover{
-    background-color: white;
-    color: #D5B12B;
-    transition: all .15s;
-}
-
-main .overlay {
-    justify-content: center;
-    position: absolute;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.467);
-}
-
-main .overlay p {
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 800;
-    text-align: center;
-    padding-top: 20%;
-    justify-content: center;
-    align-items: center;
+main .product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content:center;
+    margin-bottom: 50px;
 }
 
 
@@ -464,4 +363,57 @@ footer {
 
 footer p {
     color: white;
+}
+
+/* Media queries */
+@media (max-width: 1000px) {
+    header {
+        padding: 20px 50px;
+    }
+
+    main .section2 {
+        padding: 50px;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 20px 25px;
+    }
+
+    header .navbar .navlinks {
+        display: none;
+    }
+
+    header .navbar .menubtn {
+        display: flex;
+    }
+
+    main .section2 {
+        padding: 25px;
+    }
+
+    main .section2 h2 {
+        font-size: 20px;
+    }
+
+    main .section2 p {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    footer {
+        font-size: 12px;
+    } 
+}
+
+@media (max-width: 450px) {
+    main .product-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
 }

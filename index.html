@@ -8,25 +8,37 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>antterzn.dev</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menubtn');
+            const dropdownMenu = document.getElementById('dropdownmenu');
+    
+            menuBtn.addEventListener('click', function() {
+                // Toggle la classe "show" sur le dropdown menu
+                dropdownMenu.classList.toggle('show');
+            });
+        });
+    </script>
+    
 </head>
 <body>
     <header>
         <a href="#" class="logo">&#9001; antterzn•dev &#9002;</a>
-
+ 
         <div class="navbar">
             <div class="navlinks">
                 <a href="index.html">Home</a>
                 <a href="products.html">Products</a>
                 <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
             </div>
-            <div class="menubtn">
-                <i class="fa-solid fa-bars"></i>
+            <div class="menubtn" id="menubtn">
+                <ion-icon name="menu-sharp"></ion-icon>
             </div>
         </div>
 
-        <div class="dropdownmenu">
+        <div class="dropdownmenu" id="dropdownmenu">
             <a href="index.html">Home</a>
-            <a href="products.html" style="text-decoration: underline;">Products</a>
+            <a href="products.html">Products</a>
             <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
         </div>
     </header>
