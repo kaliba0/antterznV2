@@ -3,20 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="product_page.css">
+    <link rel="stylesheet" href="../product_page.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="product_features.js"></script>
     <title>Premium | Boost Bot</title>
+    <script src="dropsownmenu.js"></script>
 </head>
 <body>
     <header>
         <a href="../index.html" class="logo">&#9001; antterzn•dev &#9002;</a>
 
-        <div class="navlinks">
-            <a href="../index.html">Home</a>
-            <a href="../products.html">Products</a>
-            <a href="../login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
+        <div class="navbar">
+            <div class="navlinks">
+                <a href="../index.html">Home</a>
+                <a href="../products.html">Products</a>
+                <a href="../login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
+            </div>
+            <div class="menubtn" id="menubtn">
+                <ion-icon name="menu-sharp"></ion-icon>
+            </div>
+        </div>
+
+        <div class="dropdownmenu" id="dropdownmenu">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
         </div>
     </header>
 
@@ -31,13 +42,13 @@
                 <p>></p>
                 <p style="font-weight: 600;">Premium</p>
             </div>
-            <p>3/3</p>
+            <p class="pagenumber">3/3</p>
         </div>
 
         <div class="price">
         </div>
 
-        <h1 style="display: flex; flex-direction: row; align-items: center; gap: 10px;">Personnalize and order your <span style="color: #006C8D; background-color: antiquewhite;">Premium</span> ! <ion-icon name="diamond-outline" style="color: #006C8D; font-size: 40px;"></ion-icon></h1>
+        <h1>Personnalize and order your <span style="color: #006C8D; background-color: antiquewhite;">Premium</span> ! <ion-icon name="diamond-outline" style="color: #006C8D; font-size: 40px; align-items: center;"></ion-icon></h1>
 
         <div class="preferences">
             <h2>Bot features</h2>
@@ -119,6 +130,11 @@
                     <span class="text">Add a command to create embeds</span>
                 </label>
                 <label>
+                    <input type="checkbox" checked disabled>
+                    <span class="custom-checkbox"></span>
+                    <span class="text">Auto calcul of the request price</span>
+                </label>
+                <label>
                     <input type="checkbox">
                     <span class="custom-checkbox"></span>
                     <span class="text">Add a service (+4€)</span>
@@ -150,19 +166,18 @@
             <h2>Photo Gallery</h2>
             <p>I do not have any pictures of this bot. Indeed, as this bot will be completly created for your needs and your wishes, I haven't built it yet (you didn't order this bot yet 😉)</p>
         </div>
-
-        <div class="order-now">
-            <h2>Order Now</h2>
-            <p>1. Please send the needed amount <b>(<span id="price-order" style="color: white;"></span>€)</b> to me by clicking the link below :</p>
-            <a href="https://www.paypal.com/paypalme/antterzndev"  class="paypal" target="_blank"><ion-icon name="logo-paypal"></ion-icon> antterzndev on PayPal <ion-icon name="logo-paypal"></ion-icon></a>
-            <p>2. Please enter your email address in the field below :</p>
-            <input type="email" name="Email-box" id="customer-email" placeholder="example@gmail.com" required>
-            <p id="email-error" style="color:red;display:none;">Please enter a valid email address.</p>
-            <p>I will receive your order and contact you very soon in order to have more precision about your Advanced.</p>
-            <button class="orderbtn">PROCEED ORDER</button>
-            <p id="success-order" style="color: rgb(83, 255, 83); font-weight: 700; display: none;">YOUR ORDER HAS BEEN SUCCESSFULLY SENT</p>
-        </div>
     </main>
+    <div class="order-now">
+        <h2>Order Now</h2>
+        <p>1. Please send the needed amount <b>(<span id="price-order" style="color: white;"></span>€)</b> to me by clicking the link below :</p>
+        <a href="https://www.paypal.com/paypalme/antterzndev"  class="paypal" target="_blank"><ion-icon name="logo-paypal"></ion-icon> antterzndev on PayPal <ion-icon name="logo-paypal"></ion-icon></a>
+        <p>2. Please enter your email address in the field below :</p>
+        <input type="email" name="Email-box" id="customer-email" placeholder="example@gmail.com" required>
+        <p id="email-error" style="color:red;display:none;">Please enter a valid email address.</p>
+        <p>I will receive your order and contact you very soon in order to have more precision about your Advanced.</p>
+        <button class="orderbtn">PROCEED ORDER</button>
+        <p id="success-order" style="color: rgb(83, 255, 83); font-weight: 700; display: none;">YOUR ORDER HAS BEEN SUCCESSFULLY SENT</p>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {

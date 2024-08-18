@@ -6,13 +6,25 @@
     <link rel="stylesheet" href="botlists.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <title>Chose your Bot type</title>
+    <title>Chose a bot plan</title>
+    <script src="dropsownmenu.js"></script>
 </head>
 <body>
     <header>
         <a href="index.html" class="logo">&#9001; antterzn•dev &#9002;</a>
 
-        <div class="navlinks">
+        <div class="navbar">
+            <div class="navlinks">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
+            </div>
+            <div class="menubtn" id="menubtn">
+                <ion-icon name="menu-sharp"></ion-icon>
+            </div>
+        </div>
+
+        <div class="dropdownmenu" id="dropdownmenu">
             <a href="index.html">Home</a>
             <a href="products.html">Products</a>
             <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
@@ -20,25 +32,13 @@
     </header>
 
     <main>
-
-        <div class="navigation">
-            <div class="links">
-                <a href="./index.html">Home</a>
-                <p>></p>
-                <a href="./botlists.html">Bots Discord</a>
-                <p>></p>
-                <p style="font-weight: 600;">Boost Server Bot</p>
-            </div>
-            <p>2/3</p>
-        </div>
-
         <div class="section1">
             <h2>Choose a Bot Plan</h2>
             <div class="subtitle">
                 <p>All these bots are customizables !</p>
                 <p>I have created 4 types of Boost Server Bot: 2 are basics with a lower price, and 2 others are really more completes and usefull</p>
             </div>
-            <p style="text-align: center; font-weight:600; font-size: 25px; margin-bottom: 40px; margin-top: 70px;">Basics :</p>
+            <p class="categorybot">Basics :</p>
             <div class="botcatboxes">
                 <a class="box2" href="basic1/basic1.html">
                     <h3>Basic 1</h3>
@@ -122,6 +122,6 @@
                 </a>
             </div>
         </div>
-    </main>
+    </main> 
 </body> 
 </html>

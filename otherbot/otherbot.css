@@ -307,7 +307,7 @@ main .section1 .questionnaire .question textarea {
     }
 
     .order-now {
-        margin: 15px 25px;
+        margin: 15px 10px ;
     }
     #customer-email {
         width: 80%;

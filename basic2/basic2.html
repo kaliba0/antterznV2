@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="product_page.css">
+    <link rel="stylesheet" href="../product_page.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="product_features.js"></script>
     <title>Basic 2 | Boost Bot</title>
+    <script src="dropsownmenu.js"></script>
 </head>
 <body>
     <header>
         <a href="../index.html" class="logo">&#9001; antterzn•dev &#9002;</a>
 
-        <div class="navlinks">
+        <div class="navbar">
+            <div class="navlinks">
+                <a href="../index.html">Home</a>
+                <a href="../products.html">Products</a>
+                <a href="../login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
+            </div>
+            <div class="menubtn" id="menubtn">
+                <ion-icon name="menu-sharp"></ion-icon>
+            </div>
+        </div>
+
+        <div class="dropdownmenu" id="dropdownmenu">
             <a href="index.html">Home</a>
             <a href="products.html">Products</a>
             <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
@@ -31,7 +42,7 @@
                 <p>></p>
                 <p style="font-weight: 600;">Basic 2</p>
             </div>
-            <p>3/3</p>
+            <p class="pagenumber">3/3</p>
         </div>
 
         <div class="price">
@@ -92,6 +103,11 @@
                 <label>
                     <input type="checkbox">
                     <span class="custom-checkbox"></span>
+                    <span class="text">Auto calcul of the request price (+5€)</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span class="custom-checkbox"></span>
                     <span class="text">Notion website with logs of all the tickets (+7€)</span>
                 </label>
                 <label>
@@ -144,19 +160,18 @@
                 <img src="../assets/basic2/6.png" alt="">
             </div>
         </div>
-
-        <div class="order-now">
-            <h2>Order Now</h2>
-            <p>1. Please send the needed amount <b>(<span id="price-order" style="color: white;"></span>€)</b> to me by clicking the link below :</p>
-            <a href="https://www.paypal.com/paypalme/antterzndev"  class="paypal" target="_blank"><ion-icon name="logo-paypal"></ion-icon> antterzndev on PayPal <ion-icon name="logo-paypal"></ion-icon></a>
-            <p>2. Please enter your email address in the field below :</p>
-            <input type="email" name="Email-box" id="customer-email" placeholder="example@gmail.com" required>
-            <p id="email-error" style="color:red;display:none;">Please enter a valid email address.</p>
-            <p>I will receive your order and contact you very soon in order to have more precision about your Basic 2.</p>
-            <button class="orderbtn">PROCEED ORDER</button>
-            <p id="success-order" style="color: rgb(83, 255, 83); font-weight: 700; display: none;">YOUR ORDER HAS BEEN SUCCESSFULLY SENT</p>
-        </div>
     </main>
+    <div class="order-now">
+        <h2>Order Now</h2>
+        <p>1. Please send the needed amount <b>(<span id="price-order" style="color: white;"></span>€)</b> to me by clicking the link below :</p>
+        <a href="https://www.paypal.com/paypalme/antterzndev"  class="paypal" target="_blank"><ion-icon name="logo-paypal"></ion-icon> antterzndev on PayPal <ion-icon name="logo-paypal"></ion-icon></a>
+        <p>2. Please enter your email address in the field below :</p>
+        <input type="email" name="Email-box" id="customer-email" placeholder="example@gmail.com" required>
+        <p id="email-error" style="color:red;display:none;">Please enter a valid email address.</p>
+        <p>I will receive your order and contact you very soon in order to have more precision about your Basic 2.</p>
+        <button class="orderbtn">PROCEED ORDER</button>
+        <p id="success-order" style="color: rgb(83, 255, 83); font-weight: 700; display: none;">YOUR ORDER HAS BEEN SUCCESSFULLY SENT</p>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {

@@ -125,11 +125,6 @@ header .dropdownmenu a {
     border-radius: 5px;
 }
 
-header .dropdownmenu a:hover {
-    background-color: #006C8D;
-    color: white;
-    transition: all .2s;
-}
 
 header .dropdownmenu .profile {
     border: solid 2px #333333;

@@ -175,7 +175,17 @@ main .section1 h2 {
 }
 
 main .section1 .subtitle {
+    padding: 0;
+    margin: 0;
     text-align: center;
+}
+
+main .section1 .categorybot {
+    text-align: center; 
+    font-weight:600; 
+    font-size: 25px; 
+    margin-bottom: 40px; 
+    margin-top: 70px;
 }
 
 main .section1 .botcatboxes {
@@ -344,5 +354,17 @@ main .links a {
     main .product-container {
         grid-template-columns: 1fr;
         padding: 20px;
+    }
+
+    main .section1 .categorybot{
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    main .section1 .botcatboxes .box2 {
+        padding: 10px ;
+    }
+
+    main .section1 .botcatboxes .box2 p, .features p, .features ul li {
+        font-size: 14px;
     }
 }
