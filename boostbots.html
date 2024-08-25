@@ -26,8 +26,19 @@
 
         <div class="dropdownmenu" id="dropdownmenu">
             <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon></a>
+            <div>
+                <a id="products"><ion-icon name="caret-forward-sharp" id="showProductsIcon"></ion-icon>Products</a>
+                <ul class="sub-products" id="sub-products">
+                    <li><a href="products.html">All my products</a></li>
+                    <li><a href="botlists.html">Discord Bots</a></li>
+                    <li><a href="#">Websites</a></li>
+                </ul>
+            </div>
+            <a href="login/login.html" class="profile"><ion-icon name="person"></ion-icon>Login</a>
+            <div class="dropdownheader">
+                <a href="index.html" class="logo">&#9001; antterzn•dev &#9002;</a>
+                <a  id="close"><ion-icon name="close-sharp"></ion-icon></a>
+            </div>
         </div>
     </header>
 
