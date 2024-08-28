@@ -1,0 +1,15 @@
+# Activer le moteur de réécriture d'URL
+RewriteEngine On
+
+# Réécrire "index.html" vers la racine
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Réécrire "/dossier/index.html" vers "/dossier/"
+RewriteCond %{THE_REQUEST} /(.+)/index\.html [NC]
+RewriteRule ^(.+)/index\.html$ /$1/ [R=301,L]
+
+# Masquer les extensions .html pour toutes les pages
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
