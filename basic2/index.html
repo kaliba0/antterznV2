@@ -180,7 +180,14 @@
         <input type="email" name="Email-box" id="customer-email" placeholder="example@gmail.com" required>
         <p id="email-error" style="color:red;display:none;">Please enter a valid email address.</p>
         <p>I will receive your order and contact you very soon in order to have more precision about your Basic 2.</p>
-        <button class="orderbtn">PROCEED ORDER</button>
+
+        <label>
+            <input type="checkbox" id="accept-tcs">
+            <span class="custom-checkbox"></span>
+            <span class="text" style="color: white; font-weight: 600; display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">I have read and understood the <a href="../cgv/index.html" class="tcs">Terms and Conditions of Sales</a><p class="required-tcs">required</p></span>
+        </label>
+
+        <button class="orderbtn" disabled>PROCEED ORDER</button>
         <p id="success-order" style="color: rgb(83, 255, 83); font-weight: 700; display: none;">YOUR ORDER HAS BEEN SUCCESSFULLY SENT</p>
     </div>
 
@@ -194,6 +201,7 @@
             const emailError = document.getElementById('email-error');
             const successText = document.getElementById('success-order');
             const priceOrder = document.getElementById('price-order');
+            const acceptTcsCheckbox = document.getElementById('accept-tcs');
 
             function updatePrice() {
                 let totalPrice = basePrice;
@@ -267,12 +275,18 @@
                 }
             }
 
+            function toggleOrderButton() {
+                orderBtn.disabled = !acceptTcsCheckbox.checked;
+            }
+
             checkboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', updatePrice);
             });
 
+            acceptTcsCheckbox.addEventListener('change', toggleOrderButton);
             orderBtn.addEventListener('click', handleOrderClick);
 
+            toggleOrderButton(); // Vérification initiale de l'état du bouton
             updatePrice(); // Calcul initial du prix
         });
     </script>

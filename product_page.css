@@ -242,7 +242,7 @@ main .links a {
     gap: 10px; /* Espace entre les colonnes */
 }
 
-.features-list label {
+label {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -251,13 +251,13 @@ main .links a {
     padding-left: 30px; /* espace pour la case à cocher personnalisée */
 }
 
-.features-list input[type="checkbox"] {
+input[type="checkbox"] {
     opacity: 0; /* Masque la case à cocher réelle */
     position: absolute;
     cursor: pointer;
 }
 
-.features-list .custom-checkbox {
+.custom-checkbox {
     position: absolute;
     left: 0;
     top: 50%;
@@ -269,24 +269,24 @@ main .links a {
     transition: background-color 0.2s;
 }
 
-.features-list label:hover .custom-checkbox {
+label:hover .custom-checkbox {
     background-color: #b3b3b3; /* Change la couleur au survol */
 }
 
-.features-list input[type="checkbox"]:checked + .custom-checkbox {
+input[type="checkbox"]:checked + .custom-checkbox {
     background-color: black; /* Couleur lorsqu'elle est cochée */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.features-list input[type="checkbox"]:checked + .custom-checkbox::after {
+input[type="checkbox"]:checked + .custom-checkbox::after {
     content: '✓';
     color: white;
     font-size: 14px;
 }
 
-.features-list input[type="checkbox"]:checked + .custom-checkbox + .text {
+input[type="checkbox"]:checked + .custom-checkbox + .text {
     color: gray; /* Changement de la couleur du texte */
 }
 
@@ -322,6 +322,7 @@ main .links a {
     text-align: center;
     border-radius: 10px;
     padding: 10px;
+    margin: 10px;
 }
 
 .order-now h2, .order-now p, .order-now b {
@@ -368,6 +369,17 @@ main .links a {
     color: black;
 }
 
+.order-now .tcs {
+    color: white;
+    text-decoration: underline;
+}
+
+.order-now .tcs:hover {
+    transition: none;
+    background-color: #006C8D;
+    color: white;
+}
+
 .order-now .orderbtn {
     padding: 10px 50px;
     font-weight: 700;
@@ -384,6 +396,21 @@ main .links a {
     transition: all .2s;
 }
 
+.orderbtn:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+.order-now .required-tcs {
+    background-color: red;
+    padding: 2px 10px;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 12px;
+}
 
 /* Media queries */
 @media (max-width: 1000px) {
@@ -446,7 +473,7 @@ main .links a {
         display: none;
     }
 
-    .features-list label {
+    label {
         margin-bottom: 5px;
         font-size: 14px;
     }

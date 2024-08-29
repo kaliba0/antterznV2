@@ -53,7 +53,7 @@
                 <p>></p>
                 <p style="font-weight: 600;">Advanced</p>
             </div>
-            <p class="pagenumber>3/3</p>
+            <p class="pagenumber"> 3/3 </p>
         </div>
 
         <div class="price">
@@ -193,101 +193,116 @@
         <input type="email" name="Email-box" id="customer-email" placeholder="example@gmail.com" required>
         <p id="email-error" style="color:red;display:none;">Please enter a valid email address.</p>
         <p>I will receive your order and contact you very soon in order to have more precision about your Advanced.</p>
-        <button class="orderbtn">PROCEED ORDER</button>
+
+        <label>
+            <input type="checkbox" id="accept-tcs">
+            <span class="custom-checkbox"></span>
+            <span class="text" style="color: white; font-weight: 600; display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">I have read and understood the <a href="../cgv/index.html" class="tcs">Terms and Conditions of Sales</a><p class="required-tcs">required</p></span>
+        </label>
+
+        <button class="orderbtn" disabled>PROCEED ORDER</button>
         <p id="success-order" style="color: rgb(83, 255, 83); font-weight: 700; display: none;">YOUR ORDER HAS BEEN SUCCESSFULLY SENT</p>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const basePrice = 45;
-            const priceBubble = document.querySelector('.price');
-            const checkboxes = document.querySelectorAll('.features-list input[type="checkbox"]:not([disabled])');
-            const orderBtn = document.querySelector('.orderbtn');
-            const emailInput = document.getElementById('customer-email');
-            const emailError = document.getElementById('email-error');
-            const successText = document.getElementById('success-order');
-            const priceOrder = document.getElementById('price-order');
+        const basePrice = 45;
+        const priceBubble = document.querySelector('.price');
+        const checkboxes = document.querySelectorAll('.features-list input[type="checkbox"]:not([disabled])');
+        const orderBtn = document.querySelector('.orderbtn');
+        const emailInput = document.getElementById('customer-email');
+        const emailError = document.getElementById('email-error');
+        const successText = document.getElementById('success-order');
+        const priceOrder = document.getElementById('price-order');
+        const acceptTcsCheckbox = document.getElementById('accept-tcs');
 
-            function updatePrice() {
-                let totalPrice = basePrice;
+        function updatePrice() {
+            let totalPrice = basePrice;
 
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const priceText = checkbox.parentNode.querySelector('.text').textContent;
+                    const additionalPriceMatch = priceText.match(/\+\d+€/);
+                    if (additionalPriceMatch) {
+                        const additionalPrice = parseInt(additionalPriceMatch[0].replace('+', '').replace('€', ''));
+                        totalPrice += additionalPrice;
+                    }
+                }
+            });
+
+            priceBubble.textContent = totalPrice + '€';
+            priceOrder.textContent = totalPrice;
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function handleOrderClick(event) {
+            event.preventDefault();
+            const emailValue = emailInput.value;
+
+            if (!validateEmail(emailValue)) {
+                emailError.style.display = 'block';
+            } else {
+                emailError.style.display = 'none';
+
+                const selectedFeatures = [];
                 checkboxes.forEach(checkbox => {
                     if (checkbox.checked) {
-                        const priceText = checkbox.parentNode.querySelector('.text').textContent;
-                        const additionalPriceMatch = priceText.match(/\+\d+€/);
-                        if (additionalPriceMatch) {
-                            const additionalPrice = parseInt(additionalPriceMatch[0].replace('+', '').replace('€', ''));
-                            totalPrice += additionalPrice;
-                        }
+                        const featureText = checkbox.parentNode.querySelector('.text').textContent;
+                        selectedFeatures.push(featureText);
                     }
                 });
 
-                priceBubble.textContent = totalPrice + '€';
-                priceOrder.textContent = totalPrice
-            }
+                const orderDetails = {
+                    botName: "Premium",
+                    price: priceBubble.textContent,
+                    features: selectedFeatures,
+                    email: emailValue,
+                    orderDate: new Date().toLocaleString()
+                };
 
-            function validateEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(String(email).toLowerCase());
-            }
-
-            function handleOrderClick(event) {
-                event.preventDefault();
-                const emailValue = emailInput.value;
-
-                if (!validateEmail(emailValue)) {
-                    emailError.style.display = 'block';
-                } else {
-                    emailError.style.display = 'none';
-
-                    const selectedFeatures = [];
-                    checkboxes.forEach(checkbox => {
-                        if (checkbox.checked) {
-                            const featureText = checkbox.parentNode.querySelector('.text').textContent;
-                            selectedFeatures.push(featureText);
-                        }
-                    });
-
-                    const orderDetails = {
-                        botName: "Premium",
-                        price: priceBubble.textContent,
-                        features: selectedFeatures,
-                        email: emailValue,
-                        orderDate: new Date().toLocaleString()
-                    };
-
-                    // Envoi des données au serveur pour stockage dans un fichier JSON
-                    fetch('order_handler.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(orderDetails),
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            console.log('Your order has been placed successfully!');
-                            successText.style.display = 'flex';
-                        } else {
-                            alert('There was an error processing your order.');
-                        }
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
+                // Envoi des données au serveur pour stockage dans un fichier JSON
+                fetch('order_handler.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(orderDetails),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log('Your order has been placed successfully!');
+                        successText.style.display = 'flex';
+                    } else {
                         alert('There was an error processing your order.');
-                    });
-                }
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('There was an error processing your order.');
+                });
             }
+        }
 
-            checkboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', updatePrice);
-            });
+        function toggleOrderButton() {
+            orderBtn.disabled = !acceptTcsCheckbox.checked;
+        }
 
-            orderBtn.addEventListener('click', handleOrderClick);
-
-            updatePrice(); // Calcul initial du prix
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updatePrice);
         });
+
+        acceptTcsCheckbox.addEventListener('change', toggleOrderButton);
+        orderBtn.addEventListener('click', handleOrderClick);
+
+        toggleOrderButton(); // Vérification initiale de l'état du bouton
+        updatePrice(); // Calcul initial du prix
+    });
+
     </script>
 </body>
 </html>
