@@ -20,12 +20,13 @@ header {
     justify-content: space-between;
     text-align: center;
     align-items: center;
+    background-color: black;
 }
 
-.logo {
+header .logo {
     font-weight: 600;
     font-size: x-large;
-    color: #333333;
+    color: white;
 }
 
 
@@ -37,7 +38,7 @@ header .navlinks {
 }
 
 header .navlinks a {
-    color: #006C8D;
+    color: antiquewhite;
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: 500;
@@ -48,30 +49,31 @@ header .navlinks a {
 }
 
 header .navlinks .profile {
-    border: solid 2px #333333;
+    border: solid 2px white;
     color: #333333;
 }
 
-header .navlinks a ion-icon {
-    color: #333333;
+header .navlinks .profile ion-icon {
+    color: white;
     font-size: 20px;
 }
 
 header .navlinks a:hover {
-    background-color: #006C8D;
-    color: white;
+    background-color: antiquewhite;
+    color: black;
     transition: all .2s;
 } 
 
 header .navlinks .profile:hover {
-    background-color: #333333;
-    color: white;
+    background-color: white;
+    color: black;
     transition: all .2s;
 } 
 
-header .navlinks a:hover ion-icon {
-    color: white;
+header .navlinks .profile:hover ion-icon {
+    color: black;
 }
+
 
 header .navbar {
     display: flex;
@@ -80,13 +82,15 @@ header .navbar {
 }
 
 header .navbar .menubtn {
-    color: black;
     font-size: 30px;
     display: flex;
     align-items: center;
     display: none;
 }
 
+header .navbar .menubtn ion-icon {
+    color: white;
+}
 header .dropdownmenu {
     display: flex;
     flex-direction: column;
@@ -167,11 +171,6 @@ header .dropdownmenu .sub-products li a {
     font-weight: 200;
 }
 
-.products:hover + .sub-products:hover
-.sub-products {
-    display: flex;
-}
-
 header .dropdownmenu .profile {
     position: absolute;
     bottom: 0;
@@ -199,7 +198,6 @@ header .dropdownmenu .profile ion-icon {
 
 main {
     padding: 50px 100px;
-    background-color: antiquewhite;
 }
 
 main h1 {
@@ -212,15 +210,25 @@ main .box {
     padding: 20px 0;
     display: flex;
     flex-direction: column;
-    gap: 0;
 }
 
 main .box h2, main .box h3, main .box p {
     margin: 0;
     padding: 0;
 }
+
+main .box h2 {
+    font-size: larger;
+    background-color: antiquewhite;
+    width: fit-content;
+    padding: 4px 0;
+}
+
 main .box h3 {
     margin-top: 10px;
+    background-color: rgb(235, 235, 235);
+    width: fit-content;
+    padding: 2px 0;
 }
 
 main a {
