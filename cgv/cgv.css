@@ -20,7 +20,8 @@ header {
     justify-content: space-between;
     text-align: center;
     align-items: center;
-    background-color: black;
+    background-color: green;
+    
 }
 
 header .logo {
