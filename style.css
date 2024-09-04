@@ -63,10 +63,6 @@ header.scrolled a {
     color: black;
 }
 
-header .logo a, header .navlinks a {
-    transition: all 0.3s ease; /* Transition fluide pour tous les changements */
-}
-
 
 main {
     display: flex;
@@ -99,22 +95,19 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 1px 1px 5px 2px black;
-    animation: subtleMove 5s ease-in-out infinite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);;
+    animation: subtleMove 25s ease-in-out infinite;
 }
 
 @keyframes subtleMove {
     0% {
-        transform: translateY(0);
+        transform: translateY(50px);
     }
-    25% {
-        transform: translateY(3px);
-    }
-    75% {
-        transform: translateY(-3px);
+    50% {
+        transform: translateY(-50px);
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(50px);
     }
 }
 
