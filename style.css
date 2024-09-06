@@ -15,6 +15,11 @@ body {
     position: relative;
 }
 
+body.no-scroll {
+    overflow: hidden; /* Désactive le défilement */
+}
+
+
 header {
     display: flex;
     flex-direction: row;
@@ -28,15 +33,19 @@ header {
     z-index: 999;
 }
 
+.header2 {
+    display: none;
+}
+
 header.scrolled {
     background-color: rgba(255, 255, 255, 0.705);
-    backdrop-filter: blur(40px);
+    backdrop-filter: blur(20px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
     padding: 7px 30px;
     margin: 20px auto;
     width: 60%;
-    transition: all 0.8s ease; /* Animation douce pour le changement de style */
+    transition: all 0.5s ease; /* Animation douce pour le changement de style */
 }
 
 
@@ -101,13 +110,13 @@ main {
 
 @keyframes subtleMove {
     0% {
-        transform: translateY(50px);
+        transform: translateY(30px);
     }
     50% {
-        transform: translateY(-50px);
+        transform: translateY(-30px);
     }
     100% {
-        transform: translateY(50px);
+        transform: translateY(30px);
     }
 }
 
@@ -157,6 +166,7 @@ main {
     text-align: center;
     align-items: center;
     padding: 0 200px;
+    background-image: linear-gradient(to right top, #ffffff, #dae5f6, #a3d1e7, #63bec8, #32a995);
 }
 
 .section2 h2 {
@@ -183,4 +193,140 @@ main {
 
 .section2 ul {
     list-style: none;
+}
+
+.overlay {
+    display: none; /* Caché par défaut */
+    position: fixed; /* Position fixe pour couvrir toute la page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    backdrop-filter: blur(3px);
+    z-index: 998; /* Juste en dessous du menu */
+}
+
+/* Afficher l'overlay lorsque le menu est ouvert */
+.overlay.show {
+    display: block;
+    transition: all .3s;
+}
+
+
+@media (max-width: 450px) {
+
+    .section1 {
+        background-image: none;
+        background-color: black;
+    }
+
+    header {
+        display: none;
+    }
+
+    .header2 {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.705);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        left: 0;
+        right: 0;
+        padding: 12px 20px;
+        margin: 10px 10px 0 10px;
+        z-index: 999;
+        overflow: hidden; /* Empêche le débordement lorsque le menu glisse */
+        transition: height 0.5s ease;
+    }
+
+
+    .header2 .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        50% {
+            transform: translateY(10px);
+            opacity: 0.5;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .menu {
+        display: flex; /* Toujours en 'flex' mais masqué par défaut par 'height: 0' */
+        flex-direction: column;
+        margin-top: 0;
+        padding: 0;
+        border-radius: 8px;
+        text-align: center;
+        gap: 20px;
+        height: 0; /* Hauteur initiale à 0 pour masquer le menu */
+        overflow: hidden; /* Empêche le contenu de déborder lorsque caché */
+        opacity: 0; /* Caché par défaut */
+        transform: translateY(-20px); /* Position initiale pour l'animation */
+        transition: all 0.3s ease; /* Transition douce pour l'ouverture et la fermeture */
+    }
+    
+    .menu.show {
+        margin-top: 30px;
+        padding: 10px;
+        height: auto; /* Hauteur automatique pour afficher le menu */
+        opacity: 1; /* Rendre visible */
+        transform: translateY(0); /* Position finale de l'animation */
+    }
+
+    .header2 .navlinks {
+        display: none;
+    }
+
+    .header2 .logo a {
+        font-size: 20px;
+        font-weight: 800;
+        color: black;
+    }
+
+    .header2 .open-btn {
+        display: flex;
+    }
+
+    .header2 .open-btn a {
+        color: black;
+        font-weight: 400;
+    }
+
+    .section1 .box {
+        margin: 15px;
+        margin-top: 80px;
+        padding: 10px;
+        animation: none;
+    }
+
+    .section2 {
+        padding: 25px;
+        height: auto;
+        background-image: none;
+        background-color: white;
+    }
+
+    .section2 p, .section2 ul {
+        padding-left: 0;
+        margin-left: 0;
+        list-style-position: inside;
+        text-align: start;
+    }
+    
 }
